@@ -12,7 +12,7 @@ const protectedRoute = (Component) => {
 
     useEffect(() => {
       const unsubscribe = onAuthStateChanged(auth, (user) => {
-        console.log("User:", user);
+        // console.log("User:", user);
         if (user) {
           setAuthenticated(true);
         } else {

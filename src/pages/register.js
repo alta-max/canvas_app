@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebaseConfig";
+import Link from "next/link";
+import { toast } from "react-toastify";
 
 export default function Register() {
   const [email, setEmail] = useState("");
@@ -23,13 +25,11 @@ export default function Register() {
         password
       );
 
-      console.log("User created successfully:", userCredential.user);
-      alert("Registration successful!");
+      toast.success("Registration successful!");
       router.push("/login");
       setEmail("");
       setPassword("");
     } catch (error) {
-      console.error("Error creating user:", error.message);
       setError(error.message);
     } finally {
       setLoading(false);
@@ -94,9 +94,9 @@ export default function Register() {
         </form>
         <p className="mt-4 text-center text-sm text-gray-600">
           Already have an account?{" "}
-          <a href="/login" className="text-blue-600 hover:underline">
+          <Link href="/login" className="text-blue-600 hover:underline">
             Login here
-          </a>
+          </Link>
         </p>
       </div>
     </div>
