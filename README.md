@@ -37,4 +37,12 @@ This is a web-based drawing application built with React, Redux, Firebase, and K
    ```
    npm install
    ```
+docs: Update README.md with running instructions
 
+## Usage
+
+To run the canvas app:
+
+```
+npm run dev
+```
