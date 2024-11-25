@@ -30,6 +30,10 @@ function Sidebar() {
   const handleLogout = async () => {
     try {
       await auth.signOut();
+    dispatch(setActiveView("create"));
+      dispatch(setSelectedCanvasData(null));
+    dispatch(setActiveCanvasId(null));
+
       router.push("/login");
     } catch (error) {
       console.error(error.message);
